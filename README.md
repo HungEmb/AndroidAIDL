@@ -8,9 +8,17 @@ From unstable version:
 ```
 in aidl Android.bp
 
-### 2. Add  @VintfStability in *.aidl file.
+### 2. Add  ```@VintfStability``` in *.aidl file.
+```
+package apck.hardware.apckdemo;
 
-### 3. Run mm, it will gen this error:
+@VintfStability
+interface IApckDemo {
+    String getChars();
+    void putChars(in String msg);
+}
+```
+### 3. Run ```mm``` to rebuild , it will gen this error:
 ```
 FAILED: out/soong/.intermediates/hardware/interfaces/apckdemo/aidl/apck.hardware.apckdemo-api/checkapi_current.tim
 estamp
@@ -22,9 +30,11 @@ Run m apck.hardware.apckdemo-update-api, or add unstable: true to the build rule
 need to be versioned
 00:15:22 ninja failed with: exit status 1
 ```
+After this step, aidl_api folder is created with stable aidl files inside
 
 ### 4. Run ```m apck.hardware.apckdemo-update-api``` to fix above error
-### 5. mm again. All success, Check "ls out/soong/.intermediates/hardware/interfaces/apckdemo/aidl/"
+### 5. ```mm``` again. All success
+Check ```ls out/soong/.intermediates/hardware/interfaces/apckdemo/aidl/```
 ```
 apck.hardware.apckdemo-api            apck.hardware.apckdemo-V1-java         default
 apck.hardware.apckdemo_interface      apck.hardware.apckdemo-V1-java-source  testapp
