@@ -2,6 +2,7 @@ cc_binary {
     name: "apck.hardware.apckdemo-service",
     relative_install_path: "hw",
     init_rc: ["apckdemo_default.rc"],
+    vintf_fragments: ["apckdemo-service.xml"],
     vendor: true,
     shared_libs: [
 	"liblog",
@@ -9,7 +10,7 @@ cc_binary {
 	"libutils",
         "libbase",
         "libbinder_ndk",
-        "apck.hardware.apckdemo-ndk",
+        "apck.hardware.apckdemo-V1-ndk",
     ],
     srcs: [
         "ApckDemo.cpp",

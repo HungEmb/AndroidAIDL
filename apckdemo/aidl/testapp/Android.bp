@@ -12,7 +12,7 @@ cc_binary {
         "libfmq",
     ],
     static_libs: [
-        "apck.hardware.apckdemo-ndk",
+        "apck.hardware.apckdemo-V1-ndk",
         "libaidlcommonsupport",
     ],
 }

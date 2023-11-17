@@ -2,7 +2,8 @@ aidl_interface {
     name: "apck.hardware.apckdemo",
     vendor: true,
     srcs: ["apck/hardware/apckdemo/*.aidl"],
-    unstable: true,
+    stability: "vintf",
+    owner: "apck",
     backend: {
         cpp: {
             enabled: true,
