@@ -1,0 +1,18 @@
+aidl_interface {
+    name: "apck.hardware.apckdemo",
+    vendor: true,
+    srcs: ["apck/hardware/apckdemo/*.aidl"],
+    unstable: true,
+    backend: {
+        cpp: {
+            enabled: true,
+        },
+        java: {
+            sdk_version: "module_current",
+            enabled: true,
+        },
+        ndk: {
+            enabled: true,
+        },
+    },
+}

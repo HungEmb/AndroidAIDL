@@ -1,0 +1,6 @@
+service apck.apckdemo-default /vendor/bin/hw/apck.hardware.apckdemo-service
+    class hal
+    user nobody
+    group nobody
+    shutdown critical
+    seclabel u:r:shell:s0

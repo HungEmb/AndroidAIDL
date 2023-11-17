@@ -1,0 +1,18 @@
+cc_binary {
+    name: "apck_client",
+    vendor: true,
+    srcs: [
+        "apck_client.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libbinder",
+        "libbinder_ndk",
+        "libvndksupport",
+        "libfmq",
+    ],
+    static_libs: [
+        "apck.hardware.apckdemo-ndk",
+        "libaidlcommonsupport",
+    ],
+}

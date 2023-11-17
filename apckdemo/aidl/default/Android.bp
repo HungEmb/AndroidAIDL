@@ -1,0 +1,18 @@
+cc_binary {
+    name: "apck.hardware.apckdemo-service",
+    relative_install_path: "hw",
+    init_rc: ["apckdemo_default.rc"],
+    vendor: true,
+    shared_libs: [
+	"liblog",
+	"libbase",
+	"libutils",
+        "libbase",
+        "libbinder_ndk",
+        "apck.hardware.apckdemo-ndk",
+    ],
+    srcs: [
+        "ApckDemo.cpp",
+        "apckdemo_service.cpp",
+    ],
+}
